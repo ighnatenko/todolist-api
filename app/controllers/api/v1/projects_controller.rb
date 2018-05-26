@@ -1,6 +1,8 @@
 module Api
   module V1
     class ProjectsController < ApplicationController
+      before_action :authenticate_api_user!
+      
       def index
         @projects = Project.order('created_at DESC');
         render json: @projects, each_serializer: Api::ProjectSerializer
@@ -29,7 +31,7 @@ module Api
 
       def update
         project = Project.find(params[:id])
-        
+
         if project.update_attributes(project_params)
           render json: project, serializer: Api::ProjectSerializer
         else
