@@ -50,6 +50,7 @@ GEM
     arel (9.0.0)
     bcrypt (3.1.12)
     builder (3.2.3)
+    cancancan (2.2.0)
     case_transform (0.2)
       activesupport
     coderay (1.1.2)
@@ -188,6 +189,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.7)
+  cancancan (~> 2.1, >= 2.1.3)
   database_cleaner (~> 1.6, >= 1.6.2)
   devise (~> 4.4, >= 4.4.1)
   devise_token_auth (~> 0.1.43)

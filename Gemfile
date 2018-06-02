@@ -12,6 +12,7 @@ gem 'devise_token_auth', '~> 0.1.43'
 gem 'rack-cors', require: 'rack/cors'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "figaro"
+gem 'cancancan', '~> 2.1', '>= 2.1.3'
 # gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
