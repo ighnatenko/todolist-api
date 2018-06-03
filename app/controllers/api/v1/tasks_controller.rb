@@ -5,6 +5,10 @@ module Api
       load_and_authorize_resource :project
       load_and_authorize_resource through: :project
 
+      def index
+        render json: @projects.tasks, each_serializer: Api::TaskSerializer
+      end
+
       def create
         if @task.save
           render json: @task, each_serializer: Api::TaskSerializer, status: :created
