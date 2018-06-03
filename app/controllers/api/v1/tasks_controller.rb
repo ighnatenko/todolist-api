@@ -32,8 +32,8 @@ module Api
 
       def sorting
         Task.transaction do
-          params[:todos].each do |task|
-            Task.find_by(id: task[:id]).update!(order: task[:order])
+          params[:tasks].each do |task|
+            Task.find_by(id: task[:id]).update!(index: task[:index])
           end
         end
         render status: :ok
