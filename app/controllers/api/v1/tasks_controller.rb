@@ -22,7 +22,7 @@ module Api
       end
 
       def update
-        if @task.update(todo_params)
+        if @task.update(task_params)
           render json: @task, serializer: Api::TaskSerializer, status: :ok
         else
           render status: :unprocessable_entity
@@ -45,7 +45,7 @@ module Api
 
       private
 
-      def todo_params
+      def task_params
         params.permit(:title, :index, :done, :expiration_date)
       end
     end
