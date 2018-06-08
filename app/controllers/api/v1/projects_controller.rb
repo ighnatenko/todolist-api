@@ -5,7 +5,7 @@ module Api
       load_and_authorize_resource through: :current_api_user
 
       def index
-        @projects = @projects.order('created_at DESC');
+        @projects = @projects.order('created_at');
         render json: @projects, each_serializer: Api::ProjectSerializer
       end
 

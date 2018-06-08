@@ -6,6 +6,7 @@ module Api
       load_and_authorize_resource through: :project
 
       def index
+        @tasks = @tasks.order('index');
         render json: @tasks.includes(:project), each_serializer: Api::TaskSerializer
       end
 
