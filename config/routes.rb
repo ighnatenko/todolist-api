@@ -6,6 +6,7 @@ Rails.application.routes.draw do
         resources :tasks do
           resources :comments
         end
+        post 'sorting', to: 'tasks#sorting'
       end
     end
   end
