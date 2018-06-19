@@ -2,8 +2,8 @@ module Api
   module V1
     class CommentsController < ApplicationController
       before_action :authenticate_api_user!
-      load_and_authorize_resource :todo
-      load_and_authorize_resource through: :todo, only: %i[index create]
+      load_and_authorize_resource :task
+      load_and_authorize_resource through: :task, only: %i[index create]
       load_and_authorize_resource only: :destroy
   
       def index
