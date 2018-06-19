@@ -13,14 +13,11 @@ gem 'rack-cors', require: 'rack/cors'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "figaro"
 gem 'cancancan', '~> 2.1', '>= 2.1.3'
-# gem 'bcrypt', '~> 3.1.7'
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'carrierwave', '~> 1.0'
+gem 'file_validators'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :development, :test do
