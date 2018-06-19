@@ -1,5 +1,5 @@
 module Api
-  class CommetSerializer < ActiveModel::Serializer
+  class CommentSerializer < ActiveModel::Serializer
     attributes :id, :content, :created_date, :task_id, :file
 
     def created_date
