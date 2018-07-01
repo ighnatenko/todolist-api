@@ -5,11 +5,21 @@ module Api
       load_and_authorize_resource :project
       load_and_authorize_resource through: :project
 
+      api :GET, '/projects/:id/tasks', 'Show all tasks'
+      meta  data: [{id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}]
       def index
         @tasks = @tasks.order('index');
         render json: @tasks.includes(:project), each_serializer: Api::TaskSerializer
       end
 
+      api :POST, '/projects/:id/tasks', 'Create a task'
+      param :resource_param, Hash, :desc => 'Param description for all methods' do
+        param :title, String, required: true
+        param :index, Fixnum, required: true
+        param :done, [true, false]
+        param :expiration_date, Date
+      end
+      meta  data: {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}
       def create
         if @task.save
           render json: @task, each_serializer: Api::TaskSerializer, status: :created
@@ -18,10 +28,21 @@ module Api
         end
       end
 
+      api :GET, '/projects/:id/tasks/:id', 'Show a task'
+      param :id, Fixnum, required: true
+      meta  data: {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}
       def show
         render json: @task, serializer: Api::TaskSerializer
       end
 
+      api :PUT, '/projects/:id/tasks', 'Update a task'
+      param :resource_param, Hash, :desc => 'Param description for all methods' do
+        param :title, String, required: true
+        param :index, Fixnum
+        param :done, [true, false]
+        param :expiration_date, Date
+      end
+      meta  data: {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}
       def update
         if @task.update(task_params)
           render json: @task, serializer: Api::TaskSerializer, status: :ok
@@ -30,11 +51,18 @@ module Api
         end
       end
 
+      api :DELETE, '/projects/:id/tasks/:id', 'Delete a task'
+      param :id, Fixnum, required: true
+      meta  data: ''
       def destroy
         @task.destroy
         render status: :ok
       end
 
+      api :POST, '/projects/:id/tasks/:id', 'Sorting a task'
+      param :resource_param, Array, :desc => 'Two tasks'
+      meta  data: [{id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1},
+                  {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}]
       def sorting
         Task.transaction do
           params[:tasks].each do |task|

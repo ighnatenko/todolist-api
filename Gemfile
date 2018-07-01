@@ -15,6 +15,7 @@ gem "figaro"
 gem 'cancancan', '~> 2.1', '>= 2.1.3'
 gem 'carrierwave', '~> 1.0'
 gem 'file_validators'
+gem 'apipie-rails'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
