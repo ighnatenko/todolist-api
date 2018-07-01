@@ -26,7 +26,7 @@ module Api
         end
       end
   
-      api :DELETE, '/projects/:id/tasks/:id/comments', 'Delete a comment'
+      api :DELETE, '/projects/:id/tasks/:id/comments/:id', 'Delete a comment'
       param :id, :number, required: true
       example  "data: ''"
       def destroy
