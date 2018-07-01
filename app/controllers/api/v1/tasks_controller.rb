@@ -6,7 +6,7 @@ module Api
       load_and_authorize_resource through: :project
 
       api :GET, '/projects/:id/tasks', 'Show all tasks'
-      meta  data: [{id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}]
+      example  "data: [{id: 120, title: 'title', comments: [], done: false, expiration_date: '01/01/18', index: 1}]"
       def index
         @tasks = @tasks.order('index');
         render json: @tasks.includes(:project), each_serializer: Api::TaskSerializer
@@ -15,11 +15,11 @@ module Api
       api :POST, '/projects/:id/tasks', 'Create a task'
       param :resource_param, Hash, :desc => 'Param description for all methods' do
         param :title, String, required: true
-        param :index, Fixnum, required: true
+        param :index, :number, required: true
         param :done, [true, false]
         param :expiration_date, Date
       end
-      meta  data: {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}
+      example "data: {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '01/01/18', index: 1}"
       def create
         if @task.save
           render json: @task, each_serializer: Api::TaskSerializer, status: :created
@@ -29,8 +29,8 @@ module Api
       end
 
       api :GET, '/projects/:id/tasks/:id', 'Show a task'
-      param :id, Fixnum, required: true
-      meta  data: {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}
+      param :id, :number, required: true
+      example "data: {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '01/01/2018', index: 1}"
       def show
         render json: @task, serializer: Api::TaskSerializer
       end
@@ -38,11 +38,11 @@ module Api
       api :PUT, '/projects/:id/tasks', 'Update a task'
       param :resource_param, Hash, :desc => 'Param description for all methods' do
         param :title, String, required: true
-        param :index, Fixnum
+        param :index, :number
         param :done, [true, false]
         param :expiration_date, Date
       end
-      meta  data: {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}
+      example "data: {id: 120, title: 'title', comments: [], done: false, expiration_date: '01/01/2018', index: 1}"
       def update
         if @task.update(task_params)
           render json: @task, serializer: Api::TaskSerializer, status: :ok
@@ -52,17 +52,17 @@ module Api
       end
 
       api :DELETE, '/projects/:id/tasks/:id', 'Delete a task'
-      param :id, Fixnum, required: true
-      meta  data: ''
+      param :id, :number, required: true
+      example "data: ''"
       def destroy
         @task.destroy
         render status: :ok
       end
 
-      api :POST, '/projects/:id/tasks/:id', 'Sorting a task'
+      api :POST, '/projects/:id/tasks/:id', 'Sorting tasks'
       param :resource_param, Array, :desc => 'Two tasks'
-      meta  data: [{id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1},
-                  {id: 120, title: 'Example title', comments: [], done: false, expiration_date: '2018-07-01', index: 1}]
+      example "data: [{id: 120, title: 'title', comments: [], done: false, expiration_date: '01/01/2018', index: 1},
+      {id: 120, title: 'title', comments: [], done: false, expiration_date: '01/01/2018', index: 1}]"
       def sorting
         Task.transaction do
           params[:tasks].each do |task|
