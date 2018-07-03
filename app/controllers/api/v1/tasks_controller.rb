@@ -3,7 +3,8 @@ module Api
     class TasksController < ApplicationController
       before_action :authenticate_api_user!
       load_and_authorize_resource :project
-      load_and_authorize_resource through: :project
+      load_and_authorize_resource through: :project, only: %i[index create]
+      load_and_authorize_resource only: %i[show update destroy sorting]
 
       api :GET, '/projects/:id/tasks', 'Show all tasks'
       example  "data: [{id: 120, title: 'title', comments: [], done: false, expiration_date: '01/01/18', index: 1}]"
@@ -37,7 +38,7 @@ module Api
 
       api :PUT, '/projects/:id/tasks', 'Update a task'
       param :resource_param, Hash, :desc => 'Param description for all methods' do
-        param :title, String, required: true
+        param :title, String
         param :index, :number
         param :done, [true, false]
         param :expiration_date, Date
