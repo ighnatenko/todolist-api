@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "content": { "type": "text" },
+    "file": { "type": "text" },
+    "created_date": { "type": "datetime" },
+    "task_id": { "type": "integer" }
+  },
+  "required": ["id", "content", "created_date", "task_id"]
+}

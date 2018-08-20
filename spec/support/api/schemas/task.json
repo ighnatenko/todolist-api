@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "properties": {
+    "id": { "type": "integer" },
+    "index": { "type": "integer" },
+    "title": { "type": "text" },
+    "expiration_date": { "type": "date" },
+    "comments": { "$ref": "comments.json"}, 
+    "done": { "type": "boolean"}
+  },
+  "required": ["id", "title", "index"]
+}

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     describe TasksController, type: :request do
@@ -8,63 +10,81 @@ module Api
       let!(:task_params) { attributes_for(:task, project: project) }
 
       context 'GET #index' do
-        it 'get all task' do
+        it 'get all task', :show_in_doc do
           get api_v1_project_tasks_path(project), headers: headers
           expect(response).to have_http_status(200)
           expect(json).not_to be_empty
+          expect(response).to match_json_schema('tasks')
         end
       end
 
       context 'POST #create' do
         it 'return status code 201' do
-          post api_v1_project_tasks_path(project), headers: headers, params: task_params
+          post api_v1_project_tasks_path(project),
+               headers: headers, params: task_params
           expect(response).to have_http_status(201)
         end
-  
-        it 'create task' do
-          expect { post api_v1_project_tasks_path(project), headers: headers, params: task_params }.to change(Task, :count).by(1)
-        end
-      end
 
-      context 'GET #show' do
-        it 'returns status code 200' do
-          task = create(:task, project: project)
-          get api_v1_project_task_path(project, task), headers: headers
-          expect(response).to have_http_status(200)
+        it 'create task' do
+          expect do
+            post api_v1_project_tasks_path(project),
+                 headers: headers, params: task_params
+          end.to change(Task, :count).by(1)
+        end
+
+        it 'returns Task', :show_in_doc do
+          post api_v1_project_tasks_path(project),
+               headers: headers, params: task_params
+          expect(response.status).to eq 201
+          expect(response).to match_json_schema('task')
         end
       end
 
       context 'PUT #update' do
         it 'update task content' do
-          task = create(:task, project: project)
-          put api_v1_project_task_path(project, task), headers: headers, params: task_params
+          put api_v1_project_task_path(project, task),
+              headers: headers, params: task_params
           expect(response).to have_http_status(200)
           expect(Task.last.title).to eq(task_params[:title])
+        end
+
+        it 'returns Task', :show_in_doc do
+          put api_v1_project_task_path(project, task),
+              headers: headers, params: task_params
+          expect(response).to have_http_status(200)
+          expect(response).to match_json_schema('task')
         end
       end
 
       context 'DELETE #destroy' do
         it 'delete task' do
-          task = create(:task, project: project)
-          expect{ delete api_v1_project_task_path(project, task), headers: headers }.to change(Task, :count).by(-1)
+          expect do
+            delete api_v1_project_task_path(project, task),
+                   headers: headers
+          end.to change(Task, :count).by(-1)
         end
       end
 
       context 'POST #sorting' do
-        it 'sorting tasks successfully' do
-          first_task = create(:task, project: project, index: 1)
-          second_task = create(:task, project: project, index: 2)
+        let(:first_task) do
+          create(:task, project: project, index: 1)
+        end
 
-          post api_v1_project_sorting_path(project), headers: headers, params: {
+        let(:second_task) do
+          create(:task, project: project, index: 1)
+        end
+
+        it 'sorting tasks successfully' do
+          patch api_v1_project_sort_path(project), headers: headers, params: {
             tasks: [
               { id: first_task.id, index: second_task.index },
               { id: second_task.id, index: first_task.index }
             ]
           }
 
-          expect(response).to have_http_status(200)
           expect(Task.find_by(id: first_task.id).index).to eq(second_task.index)
           expect(Task.find_by(id: second_task.id).index).to eq(first_task.index)
+          expect(response).to have_http_status(200)
         end
       end
     end

@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
 module RequestSpecHelper
   def json
     JSON.parse(response.body)
   end
 
   def login(user)
-    post api_v1_user_session_path, params:  { email: user.email, password: '123456'}
+    post api_v1_user_session_path, params:
+      { email: user.email, password: '123456' }
   end
 
   def get_headers_from_response(response)
@@ -13,8 +16,8 @@ module RequestSpecHelper
     expiry = response.headers['expiry']
     token_type = response.headers['token-type']
     uid =   response.headers['uid']
-
-    headers = { 'access-token' => token, 'client' => client,
-                'uid' => uid, 'expiry' => expiry, 'token_type' => token_type }
+    headers = { 'access-token' => token, 'client' => client, 'uid' => uid,
+                'expiry' => expiry, 'token_type' => token_type }
+    headers
   end
 end

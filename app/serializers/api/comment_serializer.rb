@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   class CommentSerializer < ActiveModel::Serializer
     attributes :id, :content, :created_date, :task_id, :file

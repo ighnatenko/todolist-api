@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddProjectRefToUser < ActiveRecord::Migration[5.2]
   def change
     add_reference :projects, :user, foreign_key: true
