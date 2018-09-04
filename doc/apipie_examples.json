@@ -1,0 +1,290 @@
+{
+  "apipies#index": [
+    {
+      "verb": "GET",
+      "path": "/apipie/1.0.html",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html>\n<html>\n<head>\n  <title>API documentation</title>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/bootstrap.min.css'/>\n<link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/prettify.css'/>\n<link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/bootstrap-responsive.min.css'/>\n  <link type='text/css' rel='stylesheet' href='/apipie/stylesheets/application.css'/>\n  <!-- IE6-8 support of HTML5 elements -->\n  <!--[if lt IE 9]>\n    <script src=\"//html5shim.googlecode.com/svn/trunk/html5.js\"></script>\n  <![endif]-->\n</head>\n<body>\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div id='container'>\n        <ul class='breadcrumb'>\n  <li class='active'><a href='/apipie/1.0.html'>TodolistApi 1.0</a></li>\n  \n</ul>\n\n<div>\n<p>Another API description</p>\n</div>\n\n<h1 class='page-header'>Resources</h1>\n\n  <h2>\n    <a href='/apipie/1.0/comments.html'>\n      Comments\n    </a>\n    <br>\n    <small></small>\n  </h2>\n  <table class='table'>\n    <thead>\n      <tr>\n        <th>Resource</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/comments/index.html'>GET /api/v1/projects/:id/tasks/:id/comments</a>\n            </td>\n            <td width='60%'>Show all comments</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/comments/create.html'>POST /api/v1/projects/:id/tasks/:id/comments</a>\n            </td>\n            <td width='60%'>Create a comment</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/comments/destroy.html'>DELETE /api/v1/projects/:id/tasks/:id/comments/:id</a>\n            </td>\n            <td width='60%'>Delete a comment</td>\n          </tr>\n    </tbody>\n  </table>\n  <h2>\n    <a href='/apipie/1.0/projects.html'>\n      Projects\n    </a>\n    <br>\n    <small></small>\n  </h2>\n  <table class='table'>\n    <thead>\n      <tr>\n        <th>Resource</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/projects/index.html'>GET /api/v1/projects</a>\n            </td>\n            <td width='60%'>Show all projects</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/projects/create.html'>POST /api/v1/projects</a>\n            </td>\n            <td width='60%'>Create a project</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/projects/destroy.html'>DELETE /api/v1/projects/:id</a>\n            </td>\n            <td width='60%'>Delete a project</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/projects/update.html'>PUT /api/v1/projects/:id</a>\n            </td>\n            <td width='60%'>Update a project</td>\n          </tr>\n    </tbody>\n  </table>\n  <h2>\n    <a href='/apipie/1.0/tasks.html'>\n      Tasks\n    </a>\n    <br>\n    <small></small>\n  </h2>\n  <table class='table'>\n    <thead>\n      <tr>\n        <th>Resource</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/tasks/index.html'>GET /api/v1/projects/:id/tasks</a>\n            </td>\n            <td width='60%'>Show all tasks</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/tasks/create.html'>POST /api/v1/projects/:id/tasks</a>\n            </td>\n            <td width='60%'>Create a task</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/tasks/update.html'>PUT /api/v1/projects/:id/tasks</a>\n            </td>\n            <td width='60%'>Update a task</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/tasks/destroy.html'>DELETE /api/v1/projects/:id/tasks/:id</a>\n            </td>\n            <td width='60%'>Delete a task</td>\n          </tr>\n          <tr>\n            <td>\n              <a href='/apipie/1.0/tasks/sorting.html'>POST /api/v1/projects/:id/tasks/:id</a>\n            </td>\n            <td width='60%'>Sorting tasks</td>\n          </tr>\n    </tbody>\n  </table>\n\n\n        \n      </div>\n    </div>\n    <hr>\n    <footer></footer>\n  </div>\n  <script type='text/javascript' src='/apipie/javascripts/bundled/jquery.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/bundled/bootstrap-collapse.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/bundled/prettify.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/apipie.js'></script>\n</body>\n</html>\n",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/apipie/1.0/projects/index.html",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html>\n<html>\n<head>\n  <title>API documentation</title>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/bootstrap.min.css'/>\n<link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/prettify.css'/>\n<link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/bootstrap-responsive.min.css'/>\n  <link type='text/css' rel='stylesheet' href='/apipie/stylesheets/application.css'/>\n  <!-- IE6-8 support of HTML5 elements -->\n  <!--[if lt IE 9]>\n    <script src=\"//html5shim.googlecode.com/svn/trunk/html5.js\"></script>\n  <![endif]-->\n</head>\n<body>\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div id='container'>\n        <ul class='breadcrumb'>\n  <li>\n    <a href='/apipie/1.0.html'>TodolistApi 1.0</a>\n    <span class='divider'>/</span>\n  </li>\n  <li>\n    <a href='/apipie/1.0/projects.html'>\n      Projects\n      \n    </a>\n    <span class='divider'>/</span>\n  </li>\n  <li class='active'>index</li>\n  \n\n</ul>\n\n  <div class='page-header'>\n    <h1>\n      GET /api/v1/projects\n      <br>\n      <small>Show all projects</small>\n    </h1>\n  </div>\n\n<div>\n\n  \n\n\n\n\n  <h2>Examples</h2>\n    <pre class=\"prettyprint\">data: [{id: 120, title: &#39;title&#39;, tasks: []}]</pre>\n\n\n\n\n</div>\n\n\n        \n      </div>\n    </div>\n    <hr>\n    <footer></footer>\n  </div>\n  <script type='text/javascript' src='/apipie/javascripts/bundled/jquery.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/bundled/bootstrap-collapse.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/bundled/prettify.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/apipie.js'></script>\n</body>\n</html>\n",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/apipie/1.0/projects/create.html",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<!DOCTYPE html>\n<html>\n<head>\n  <title>API documentation</title>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"/>\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/bootstrap.min.css'/>\n<link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/prettify.css'/>\n<link type='text/css' rel='stylesheet' href='/apipie/stylesheets/bundled/bootstrap-responsive.min.css'/>\n  <link type='text/css' rel='stylesheet' href='/apipie/stylesheets/application.css'/>\n  <!-- IE6-8 support of HTML5 elements -->\n  <!--[if lt IE 9]>\n    <script src=\"//html5shim.googlecode.com/svn/trunk/html5.js\"></script>\n  <![endif]-->\n</head>\n<body>\n  <div class=\"container-fluid\">\n    <div class=\"row-fluid\">\n      <div id='container'>\n        <ul class='breadcrumb'>\n  <li>\n    <a href='/apipie/1.0.html'>TodolistApi 1.0</a>\n    <span class='divider'>/</span>\n  </li>\n  <li>\n    <a href='/apipie/1.0/projects.html'>\n      Projects\n      \n    </a>\n    <span class='divider'>/</span>\n  </li>\n  <li class='active'>create</li>\n  \n\n</ul>\n\n  <div class='page-header'>\n    <h1>\n      POST /api/v1/projects\n      <br>\n      <small>Create a project</small>\n    </h1>\n  </div>\n\n<div>\n\n  \n\n\n\n\n\n  <h2>Params</h2>\n  <table class='table'>\n    <thead>\n      <tr>\n        <th>Param name</th>\n        <th>Description</th>\n      </tr>\n    </thead>\n    <tbody>\n        <tr style='background-color:rgb(255,255,255);'>\n    <td>\n      <strong>title </strong><br>\n      <small>\n        required\n        \n      </small>\n    </td>\n    <td>\n      \n        <p><strong>Validations:</strong></p>\n        <ul>\n            <li>\n<p>Must be a String</p>\n</li>\n        </ul>\n\n    </td>\n\n  </tr>\n\n  \n\n    </tbody>\n  </table>\n\n\n\n</div>\n\n\n        \n      </div>\n    </div>\n    <hr>\n    <footer></footer>\n  </div>\n  <script type='text/javascript' src='/apipie/javascripts/bundled/jquery.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/bundled/bootstrap-collapse.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/bundled/prettify.js'></script>\n<script type='text/javascript' src='/apipie/javascripts/apipie.js'></script>\n</body>\n</html>\n",
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "comments#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/projects/2/tasks/2/comments",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "content=Time+of+the+Red+City",
+      "response_data": {
+        "id": 3,
+        "content": "Time of the Red City",
+        "created_date": "09/07/18",
+        "task_id": 2,
+        "file": {
+          "url": null
+        }
+      },
+      "code": 201,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "comments#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/api/v1/projects/3/tasks/3/comments/4",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "comments#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/projects/1/tasks/1/comments",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 1,
+          "content": "Journey of the Red Jungle",
+          "created_date": "09/07/18",
+          "task_id": 1,
+          "file": {
+            "url": null
+          }
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "projects#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/projects",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "title=Case+of+the+Missing+Champagne+Wizard",
+      "response_data": {
+        "id": 2,
+        "title": "Case of the Missing Champagne Wizard",
+        "tasks": [
+
+        ]
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "projects#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/api/v1/projects/8",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "projects#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/projects",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 1,
+          "title": "Forbidden Friday",
+          "tasks": [
+
+          ]
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "projects#update": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/projects/3",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "title=title",
+      "response_data": {
+        "id": 3,
+        "title": "title",
+        "tasks": [
+
+        ]
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "tasks#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/projects/5/tasks",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "title=Season+of+the+Dangerous+Brain&index=83&done=false&expiration_date=2018-05-16+14%3A12%3A26+%2B0300",
+      "response_data": {
+        "id": 3,
+        "title": "Season of the Dangerous Brain",
+        "index": 83,
+        "done": false,
+        "project_id": 5,
+        "created_at": "2018-07-09T22:48:17.191Z",
+        "updated_at": "2018-07-09T22:48:17.191Z",
+        "expiration_date": "2018-05-16"
+      },
+      "code": 201,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "tasks#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/api/v1/projects/13/tasks/12",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "tasks#index": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/projects/4/tasks",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": [
+        {
+          "id": 1,
+          "title": "Season of the Ultra Thief",
+          "done": false,
+          "index": 57,
+          "expiration_date": "2018-07-01",
+          "comments": [
+
+          ]
+        }
+      ],
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "tasks#sort": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/projects/7/sort",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": false
+    }
+  ],
+  "tasks#update": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/projects/6/tasks/4",
+      "versions": [
+        "1.0"
+      ],
+      "query": null,
+      "request_data": "title=Day+of+the+Bloody+Cousins&index=38&done=false&expiration_date=2018-06-07+16%3A18%3A13+%2B0300",
+      "response_data": {
+        "id": 4,
+        "title": "Day of the Bloody Cousins",
+        "done": false,
+        "index": 38,
+        "expiration_date": "2018-06-07",
+        "comments": [
+
+        ]
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ]
+}

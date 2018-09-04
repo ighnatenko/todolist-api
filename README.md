@@ -1,24 +1,11 @@
-# README
+Documentation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+https://todox-api.herokuapp.com/apipie
 
-Things you may want to cover:
+Client
 
-* Ruby version
+https://todo-z.herokuapp.com
 
-* System dependencies
+Client git
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://github.com/ighnatenko/todo-react-redux/tree/develop
